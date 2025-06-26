@@ -14,7 +14,7 @@ function sendMessage() {
   const userMessage = input.value.trim();
 
   if (userMessage !== "") {
-    addMessage("คุณ", userMessage);
+    addMessage("พระเจ้าอยู่หัว", userMessage);
 
     setTimeout(() => {
       const name = names[currentIndex];
