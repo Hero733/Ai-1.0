@@ -13,7 +13,7 @@ const replies = [
     "ปั่นบันลือโลก"
 ];
 
-let currentIndex = 0; // This will still be used if no name is detected
+let currentIndex = 0; // For cycling through replies if no name is matched
 
 function sendMessage() {
     const input = document.getElementById("user-input");
@@ -21,8 +21,10 @@ function sendMessage() {
     const userMessage = input.value.trim();
 
     if (userMessage !== "") {
-        addMessage("พระเจ้าอยู่หัว", userMessage); // User's message
+        // Add user's message to the chat box
+        addMessage("คุณ", userMessage); // Changed sender to "คุณ" (You) for clarity
 
+        // Simulate a delay before the bot replies
         setTimeout(() => {
             let replyFound = false;
             let nameToReply = "";
@@ -34,13 +36,15 @@ function sendMessage() {
             // Check if any name from the 'names' array is in the user's message
             for (let i = 0; i < names.length; i++) {
                 // Convert the name to lowercase for comparison
+                // Check if the user's message *contains* the name
                 if (lowerCaseUserMessage.includes(names[i].toLowerCase())) {
                     nameToReply = names[i];
-                    // Use the corresponding reply from the 'replies' array
-                    // Ensure that 'replies' array has an index for each name
-                    specificReply = replies[i];
-                    replyFound = true;
-                    break; // Stop after finding the first name
+                    // Ensure replies array has a corresponding entry
+                    if (i < replies.length) {
+                        specificReply = replies[i];
+                        replyFound = true;
+                        break; // Stop after finding the first name
+                    }
                 }
             }
 
@@ -49,21 +53,26 @@ function sendMessage() {
                 addMessage(nameToReply, specificReply);
             } else {
                 // If no name was found, use the current cycling logic
-                const name = names[currentIndex % names.length]; // Ensure valid index
-                const reply = replies[currentIndex % replies.length]; // Ensure valid index for replies array
+                // Ensure we don't go out of bounds for both arrays
+                const name = names[currentIndex % names.length];
+                const reply = replies[currentIndex % replies.length]; // Use replies.length for replies
                 addMessage(name, reply);
-                currentIndex = (currentIndex + 1) % names.length; // Cycle through names
+                currentIndex = (currentIndex + 1) % names.length; // Still cycle based on names count
             }
-        }, 700);
+        }, 700); // 0.7 second delay
 
+        // Clear the input field
         input.value = "";
     }
 }
 
+// Function to add a message to the chat box
 function addMessage(sender, message) {
     const chatBox = document.getElementById("chat-box");
     const messageElement = document.createElement("div");
+    // Use strong tag for sender's name
     messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
     chatBox.appendChild(messageElement);
+    // Scroll to the bottom of the chat box to show the latest message
     chatBox.scrollTop = chatBox.scrollHeight;
 }
