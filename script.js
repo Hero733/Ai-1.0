@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homePage.style.display = 'block';
             homePage.classList.add('active');
             mainHeaderTitle.textContent = 'หน้าแรก';
-            pageTitle.textContent = 'Roblox Hub - หน้าแรก';
+            pageTitle.textContent = 'GI : STUDIO - หน้าหลัก';
             // เริ่มสไลด์รูปภาพเมื่ออยู่หน้า Home
             startImageSlider();
             updateSliderDisplay(); // อัปเดตรูปภาพและจุดเมื่อเข้าหน้า Home
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutPage.style.display = 'block';
             aboutPage.classList.add('active');
             mainHeaderTitle.textContent = 'เกี่ยวกับ';
-            pageTitle.textContent = 'Roblox Hub - เกี่ยวกับ';
+            pageTitle.textContent = 'GI : STUDIO - เกี่ยวกับ';
         } else {
             // นี่คือหน้าโค้ดของแมพ
             mapPage.style.display = 'block';
