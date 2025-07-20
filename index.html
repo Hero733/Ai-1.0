@@ -3,381 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTUN Banking - ธนาคารโรงเรียน</title>
+    <title id="pageTitle">Home - หน้าแรก</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.roblox.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="dark-theme">
-
-    <div class="auth-container active" id="auth-container">
-        <div class="auth-card">
-            <div class="auth-header">
-                <img src="https://fth1.com/uppic/10106510/news/10106510_0_20241010-152622.png" alt="NTUN Banking Logo">
-                <h2>ยินดีต้อนรับสู่ NTUN Banking</h2>
-                <p id="auth-subtitle">เข้าสู่ระบบบัญชีนักเรียน</p>
-            </div>
-
-            <form id="login-form" class="auth-form active">
-                <div class="form-group">
-                    <label for="login-username">ชื่อผู้ใช้</label>
-                    <input type="text" id="login-username" placeholder="กรอกชื่อผู้ใช้ของคุณ" required>
-                </div>
-                <div class="form-group password-group">
-                    <label for="login-password">รหัสผ่าน</label>
-                    <input type="password" id="login-password" placeholder="กรอกรหัสผ่านของคุณ" required>
-                    <span class="password-toggle" data-target="login-password"><i class="fas fa-eye"></i></span>
-                </div>
-                <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
-                <div class="auth-switch">
-                    ยังไม่มีบัญชีใช่ไหม? <span id="show-register">ลงทะเบียน</span>
-                </div>
-                <div id="login-message" class="message"></div>
-            </form>
-
-            <form id="register-form" class="auth-form">
-                <div class="form-group">
-                    <label for="register-username">ชื่อผู้ใช้</label>
-                    <input type="text" id="register-username" placeholder="ตั้งชื่อผู้ใช้" required>
-                </div>
-                <div class="form-group password-group">
-                    <label for="register-password">รหัสผ่าน</label>
-                    <input type="password" id="register-password" placeholder="ตั้งรหัสผ่าน" required>
-                    <span class="password-toggle" data-target="register-password"><i class="fas fa-eye"></i></span>
-                </div>
-                <div class="form-group password-group">
-                    <label for="register-confirm-password">ยืนยันรหัสผ่าน</label>
-                    <input type="password" id="register-confirm-password" placeholder="ยืนยันรหัสผ่านอีกครั้ง" required>
-                    <span class="password-toggle" data-target="register-confirm-password"><i class="fas fa-eye"></i></span>
-                </div>
-                 <div class="form-group">
-                    <label for="register-full-name">ชื่อ-นามสกุล</label>
-                    <input type="text" id="register-full-name" placeholder="ชื่อ-นามสกุลของคุณ" required>
-                </div>
-                <button type="submit" class="btn btn-primary">ลงทะเบียน</button>
-                <div class="auth-switch">
-                    มีบัญชีอยู่แล้ว? <span id="show-login">เข้าสู่ระบบ</span>
-                </div>
-                <div id="register-message" class="message"></div>
-            </form>
+<body>
+    <header class="roblox-header">
+        <div class="header-content">
+            <img src="assets/img/GI.png" alt="Roblox Logo" class="roblox-logo">
+            <h1 id="mainHeaderTitle">หน้าแรก</h1>
         </div>
-    </div>
+    </header>
 
-
-    <div class="main-app-container" id="main-app-container">
-        <div class="sidebar">
-            <div class="bank-logo">
-                <img src="https://fth1.com/uppic/10106510/news/10106510_0_20241010-152622.png" alt="NTUN Banking Logo">
-                <h2>NTUN Banking</h2>
-            </div>
-            <nav class="nav-menu">
-                <ul id="student-menu">
-                    <li class="active" data-section="dashboard">
-                        <i class="fas fa-chart-line"></i>
-                        หน้าหลัก
-                    </li>
-                    <li data-section="transactions">
-                        <i class="fas fa-history"></i>
-                        ประวัติการทำรายการ
-                    </li>
-                    <li data-section="transfer">
-                        <i class="fas fa-exchange-alt"></i>
-                        โอนเงิน
-                    </li>
-                    <li data-section="deposit">
-                        <i class="fas fa-plus-circle"></i>
-                        ฝากเงิน
-                    </li>
-                    <li data-section="withdraw">
-                        <i class="fas fa-minus-circle"></i>
-                        ถอนเงิน
-                    </li>
-                    <li data-section="bank-card">
-                        <i class="fas fa-credit-card"></i>
-                        บัตรธนาคาร
-                    </li>
-                    <li data-section="qr-transfer"> <i class="fas fa-qrcode"></i>
-                        โอนด้วย QR Code
-                    </li>
-                    <li data-section="settings">
-                        <i class="fas fa-cog"></i>
-                        ตั้งค่า
-                    </li>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-item active" data-page="home"><i class="fas fa-home"></i> <span>หน้าแรก</span></a></li>
+                    <li class="separator"></li>
+                    <li><a href="#FruityLand" class="nav-item" data-page="bloxfruits"><i class="fas fa-ship"></i> <span>FruityLand</span></a></li>
+                    <li><a href="#GodPiece" class="nav-item" data-page="petsimx"><i class="fas fa-ship"></i> <span>GodPiece</span></a></li>
+                    <li><a href="#OakPiece" class="nav-item" data-page="adoptme"><i class="fas fa-ship"></i> <span>OakPiece</span></a></li>
+                    <li class="separator"></li>
+                    <li><a href="#about" class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> <span>เกี่ยวกับ</span></a></li>
                 </ul>
             </nav>
-            <div class="user-profile-sidebar">
-                <img id="sidebar-profile-pic" src="https://via.placeholder.com/40x40/555555/FFFFFF?text=U" alt="User Avatar">
-                <div class="user-info">
-                    <span id="sidebar-username">ผู้ใช้ทั่วไป</span>
-                    <small id="user-role">นักเรียน</small>
-                </div>
-                <button class="btn btn-icon logout-btn" title="ออกจากระบบ"><i class="fas fa-sign-out-alt"></i></button>
-            </div>
-        </div>
+        </aside>
 
-        <div class="main-content">
-            <header>
-                <h1 id="current-section-title">แดชบอร์ด</h1>
-                <div class="header-right">
-                    <div class="profile-summary">
-                        <img id="header-profile-pic" src="https://via.placeholder.com/30x30/555555/FFFFFF?text=U" alt="User Avatar">
-                        <span id="header-username">ผู้ใช้ทั่วไป</span>
-                    </div>
-                </div>
-            </header>
-
-            <div id="dashboard" class="content-section active">
-                <div class="dashboard-grid">
-                    <div class="card balance-card">
-                        <h3>ยอดเงินปัจจุบัน</h3>
-                        <p class="balance-amount" id="current-balance">$0.00</p>
-                        <button class="btn btn-primary refresh-balance"><i class="fas fa-sync-alt"></i> รีเฟรชยอดเงิน</button>
-                    </div>
-                    <div class="card quick-actions-card">
-                        <h3>ทำรายการด่วน</h3>
-                        <button class="btn btn-secondary" data-section="deposit"><i class="fas fa-plus"></i> ฝากเงิน</button>
-                        <button class="btn btn-secondary" data-section="withdraw"><i class="fas fa-minus"></i> ถอนเงิน</button>
-                        <button class="btn btn-secondary" data-section="transfer"><i class="fas fa-share-square"></i> โอนเงิน</button>
-                        <button class="btn btn-secondary" data-section="qr-transfer"><i class="fas fa-qrcode"></i> โอนด้วย QR</button>
-                    </div>
-                    <div class="card chart-card">
-                        <h3>แนวโน้มยอดเงิน</h3>
-                        <canvas id="balanceChart"></canvas>
-                    </div>
-                    <div class="card recent-transactions-card full-width">
-                        <h3>รายการล่าสุด</h3>
-                        <ul id="recent-transactions-list">
-                            <li>ยังไม่มีรายการล่าสุด</li>
-                        </ul>
-                        <button class="btn btn-secondary view-all-transactions" data-section="transactions"><i class="fas fa-eye"></i> ดูทั้งหมด</button>
+        <main class="content-area">
+            <div id="homePage" class="page-content active">
+                <div class="card home-welcome-card">
+                    <h2>🚀 ยินดีต้อนรับ เข้าสู่เว็ปของพวกเรา</h2>
+                    <p>ค้นหาโค้ดใหม่ หรือ เก่าได้ที่นี้</p>
+                    
+                    <div class="slider-container">
+                        <img src="assets/img/Obito.png" alt="Awesome Game Scene" class="home-thumbnail" id="homeSliderImage">
+                        <button class="slider-nav prev" id="sliderPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-nav next" id="sliderNextBtn"><i class="fas fa-chevron-right"></i></button>
+                        <div class="slider-dots" id="sliderDots">
+                            </div>
                     </div>
 
+                    <p class="call-to-action">⚡ เลือกแมพที่คุณ ต้องการทางซ้ายมือ!</p>
                 </div>
-            </div>
-
-            <div id="transactions" class="content-section">
-                <h2>ประวัติการทำรายการ</h2>
-                <div class="transaction-filters card">
-                    <div class="form-group">
-                        <label for="transaction-type-filter"><i class="fas fa-filter"></i> ประเภท:</label>
-                        <select id="transaction-type-filter">
-                            <option value="all">ทั้งหมด</option>
-                            <option value="deposit">ฝากเงิน</option>
-                            <option value="withdraw">ถอนเงิน</option>
-                            <option value="transfer-out">โอนออก</option>
-                            <option value="transfer-in">โอนเข้า</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="transaction-sort"><i class="fas fa-sort"></i> เรียงตาม:</label>
-                        <select id="transaction-sort">
-                            <option value="newest">ล่าสุด</option>
-                            <option value="oldest">เก่าสุด</option>
-                            <option value="amount-high">จำนวน (มากไปน้อย)</option>
-                            <option value="amount-low">จำนวน (น้อยไปมาก)</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-secondary" id="apply-filters"><i class="fas fa-check"></i> ใช้ตัวกรอง</button>
-                </div>
-                <div class="transaction-list-container card">
-                    <ul id="all-transactions-list">
-                        <li>ยังไม่มีรายการ</li>
+                <div class="card feature-card">
+                    <h3>💎 ฟีเจอร์เด็ดที่เรามีให้คุณ</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> โค้ดใหม่แกะกล่อง อัพเดตทุกโค้ดแนะนำไม่มีหลอกลวง!</li>
+                        <li><i class="fas fa-search"></i> ระบบตรวจสอบโค้ด ใช้งานง่าย ไม่พลาดทุกรางวัล!</li>
+                        <li><i class="fas fa-gamepad"></i> รวมโค้ดจากหลายเกมในค่าย GI ครบคลั้น!</li>
                     </ul>
                 </div>
             </div>
 
-            <div id="transfer" class="content-section">
-                <h2>โอนเงิน</h2>
-                <form id="transfer-form" class="card">
-                    <div class="form-group">
-                        <label for="transfer-recipient"><i class="fas fa-user"></i> ชื่อบัญชีผู้รับ:</label>
-                        <input type="text" id="transfer-recipient" placeholder="เช่น นายสมชาย ใจดี" required>
+            <div id="mapPage" class="page-content">
+                <div class="card check-code-section">
+                    <h2>🔍 ตรวจสอบโค้ด (Code Checker)</h2>
+                    <p class="instruction-small">ใส่โค้ดที่คุณมี เพื่อดูว่าได้อะไรและยังใช้งานได้ไหม!</p>
+                    <div class="input-group">
+                        <input type="text" id="checkCodeInput" placeholder="ใส่โค้ดที่ต้องการตรวจสอบ...">
+                        <button id="checkCodeButton" class="modern-button">ตรวจสอบ</button>
                     </div>
-                     <div class="form-group">
-                        <label for="transfer-account-number"><i class="fas fa-hashtag"></i> เลขที่บัญชีผู้รับ:</label>
-                        <input type="text" id="transfer-account-number" placeholder="เช่น 1234567890" required pattern="[0-9]{10}">
-                        <small>เลขที่บัญชี 10 หลัก (เช่น 1234567890)</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="transfer-amount"><i class="fas fa-dollar-sign"></i> จำนวนเงิน:</label>
-                        <input type="number" id="transfer-amount" step="0.01" min="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="transfer-notes"><i class="fas fa-sticky-note"></i> บันทึก (ไม่บังคับ):</label>
-                        <input type="text" id="transfer-notes" placeholder="เช่น ค่าข้าว">
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> โอนเงิน</button>
-                </form>
-                <div id="transfer-message" class="message"></div>
-            </div>
+                    <p id="checkMessage" class="info-message"></p>
+                </div>
 
-            <div id="deposit" class="content-section">
-                <h2>ฝากเงิน</h2>
-                <form id="deposit-form" class="card">
-                    <div class="form-group">
-                        <label for="deposit-amount"><i class="fas fa-dollar-sign"></i> จำนวนเงินที่ต้องการฝาก:</label>
-                        <input type="number" id="deposit-amount" step="0.01" min="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="deposit-notes"><i class="fas fa-sticky-note"></i> บันทึก (ไม่บังคับ):</label>
-                        <input type="text" id="deposit-notes" placeholder="เช่น ค่าขนม">
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> ฝากเงิน</button>
-                </form>
-                <div id="deposit-message" class="message"></div>
-            </div>
-
-            <div id="withdraw" class="content-section">
-                <h2>ถอนเงิน</h2>
-                <form id="withdraw-form" class="card">
-                    <div class="form-group">
-                        <label for="withdraw-amount"><i class="fas fa-dollar-sign"></i> จำนวนเงินที่ต้องการถอน:</label>
-                        <input type="number" id="withdraw-amount" step="0.01" min="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="withdraw-notes"><i class="fas fa-sticky-note"></i> บันทึก (ไม่บังคับ):</label>
-                        <input type="text" id="withdraw-notes" placeholder="เช่น ซื้อหนังสือ">
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-minus"></i> ถอนเงิน</button>
-                </form>
-                <div id="withdraw-message" class="message"></div>
-            </div>
-
-            <div id="bank-card" class="content-section">
-                <h2>บัตรธนาคารของคุณ</h2>
-                <div class="bank-card-container">
-                    <div class="bank-card-front">
-                        <div class="bank-card-logo">NTUN BANKING</div>
-                        <div class="ntun-plus-logo">N+</div>
-                        <div class="chip"></div>
-                        <div class="card-number" id="display-card-number">XXXX XXXX XXXX XXXX</div>
-                        <div class="card-holder-name" id="display-card-holder">STUDENT NAME</div>
-                        <div class="card-expiry" id="display-card-expiry">MM/YY</div>
-                    </div>
-                    <div class="bank-card-back">
-                        <div class="magnetic-strip"></div>
-                        <div class="cvv-strip">
-                            <span id="display-card-cvv">XXX</span>
+                <div class="card code-section">
+                    <h2>✨ โค้ดใหม่ล่าสุด (New Codes)</h2>
+                    <div id="newCodeList" class="code-list">
                         </div>
-                        <div class="signature-line">AUTHORIZED SIGNATURE</div>
-                        <div class="ntun-plus-logo-back">N+</div>
-                    </div>
-                </div>
-                <div class="card-actions">
-                    <button class="btn btn-primary generate-card" id="generate-card-btn"><i class="fas fa-sync-alt"></i> สร้างบัตรใหม่</button>
-                    <button class="btn btn-secondary copy-card-info" id="copy-card-info-btn"><i class="fas fa-copy"></i> คัดลอกข้อมูลบัตร</button>
-                </div>
-                <div class="card-info-warning">
-                    <p><i class="fas fa-exclamation-triangle"></i> <strong>หมายเหตุ:</strong> นี่คือบัตรจำลองสำหรับแสดงผลเท่านั้น ห้ามใช้ข้อมูลส่วนตัวจริง.</p>
-                </div>
-                <div id="card-message" class="message"></div>
-            </div>
-
-            <div id="qr-transfer" class="content-section">
-                <h2>โอนด้วย QR Code</h2>
-                <div class="qr-code-section card">
-                    <h3>QR Code สำหรับรับเงินของคุณ</h3>
-                    <p>ให้คนอื่นสแกน QR Code นี้เพื่อโอนเงินให้คุณ:</p>
-                    <div id="my-qr-code" class="qr-code-display"></div>
-                    <div class="qr-info">
-                        <p>ชื่อ: <strong id="qr-fullname-display"></strong></p>
-                        <p>เลขที่บัญชี: <strong id="qr-account-number-display"></strong></p>
-                    </div>
-                    <button class="btn btn-secondary" id="download-qr-btn"><i class="fas fa-download"></i> ดาวน์โหลด QR Code</button>
+                    <p class="instruction">💡 **ทิปส์:** แค่คลิก "คัดลอก" แล้วเอาไปใส่ในเกมได้เลย!</p>
                 </div>
 
-                <div class="qr-scan-section card">
-                    <h3>สแกน QR Code เพื่อโอนเงิน</h3>
-                    <p>สำหรับจำลองการสแกน QR Code เพื่อโอนเงิน</p>
-                    <div class="form-group">
-                        <label for="qr-input-data">ข้อมูล QR Code (จำลองการสแกน):</label>
-                        <input type="text" id="qr-input-data" placeholder="กรอกข้อมูล QR Code ที่ต้องการสแกน">
-                        <small>เช่น: {"type":"account","accountNumber":"1234567890","fullName":"นายสมชาย ใจดี"}</small>
-                    </div>
-                    <button class="btn btn-primary" id="scan-qr-btn"><i class="fas fa-qrcode"></i> สแกน QR Code (จำลอง)</button>
-                    <div id="qr-scan-message" class="message"></div>
-
-                    <form id="qr-transfer-form" class="hidden-form">
-                        <hr>
-                        <h4>ข้อมูลผู้รับ (จาก QR Code)</h4>
-                        <div class="form-group">
-                            <label>ชื่อผู้รับ:</label>
-                            <input type="text" id="scanned-recipient-name" readonly>
+                <div class="card code-section">
+                    <h2>⏳ โค้ดเก่า / หมดอายุ (Old / Expired Codes)</h2>
+                    <div id="oldCodeList" class="code-list">
                         </div>
-                        <div class="form-group">
-                            <label>เลขที่บัญชีผู้รับ:</label>
-                            <input type="text" id="scanned-recipient-account" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="qr-transfer-amount"><i class="fas fa-dollar-sign"></i> จำนวนเงิน:</label>
-                            <input type="number" id="qr-transfer-amount" step="0.01" min="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="qr-transfer-notes"><i class="fas fa-sticky-note"></i> บันทึก (ไม่บังคับ):</label>
-                            <input type="text" id="qr-transfer-notes" placeholder="เช่น ค่าอาหาร">
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> ยืนยันการโอน</button>
-                    </form>
                 </div>
             </div>
 
-            <div id="settings" class="content-section">
-                <h2>ตั้งค่า</h2>
-                <form id="settings-form" class="card">
-                    <h3><i class="fas fa-user-circle"></i> ตั้งค่าโปรไฟล์</h3>
-                    <div class="form-group">
-                        <label for="profile-name">ชื่อ-นามสกุล:</label>
-                        <input type="text" id="profile-name" placeholder="กรอกชื่อ-นามสกุลของคุณ">
-                    </div>
-                    <div class="form-group">
-                        <label for="profile-pic-upload">อัปโหลดรูปโปรไฟล์:</label>
-                        <input type="file" id="profile-pic-upload" accept="image/*">
-                        <small>ขนาดไฟล์สูงสุด: 2MB</small>
-                    </div>
-                    <div class="profile-pic-preview">
-                        <img id="profile-pic-preview-img" src="https://via.placeholder.com/100x100/555555/FFFFFF?text=Preview" alt="Profile Preview">
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> บันทึกโปรไฟล์</button>
-                </form>
-
-                <form id="account-settings-form" class="card">
-                    <h3><i class="fas fa-user-shield"></i> ตั้งค่าบัญชี</h3>
-                     <div class="form-group">
-                        <label for="account-number-display">เลขที่บัญชีของคุณ:</label>
-                        <input type="text" id="account-number-display" readonly>
-                        <small>นี่คือเลขที่บัญชีเฉพาะของคุณสำหรับรับโอนเงิน</small>
-                    </div>
-                    <div class="form-group password-group">
-                        <label for="old-password">รหัสผ่านเก่า:</label>
-                        <input type="password" id="old-password" placeholder="กรอกรหัสผ่านเก่า">
-                        <span class="password-toggle" data-target="old-password"><i class="fas fa-eye"></i></span>
-                    </div>
-                    <div class="form-group password-group">
-                        <label for="new-password">รหัสผ่านใหม่:</label>
-                        <input type="password" id="new-password" placeholder="กรอกรหัสผ่านใหม่">
-                        <span class="password-toggle" data-target="new-password"><i class="fas fa-eye"></i></span>
-                    </div>
-                    <div class="form-group password-group">
-                        <label for="confirm-new-password">ยืนยันรหัสผ่านใหม่:</label>
-                        <input type="password" id="confirm-new-password" placeholder="ยืนยันรหัสผ่านใหม่">
-                        <span class="password-toggle" data-target="confirm-new-password"><i class="fas fa-eye"></i></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="change-password-btn"><i class="fas fa-key"></i> เปลี่ยนรหัสผ่าน</button>
-                </form>
-
-                <div class="advanced-settings card">
-                    <h3><i class="fas fa-exclamation-triangle"></i> เขตอันตราย</h3>
-                    <button class="btn btn-danger" id="reset-data"><i class="fas fa-trash-alt"></i> รีเซ็ตข้อมูลทั้งหมด</button>
-                    <p class="reset-warning">นี่จะล้างยอดเงิน, รายการธุรกรรม, และข้อมูลผู้ใช้ทั้งหมด. การดำเนินการนี้ไม่สามารถย้อนกลับได้!</p>
+            <div id="aboutPage" class="page-content">
+                <div class="card about-card">
+                    <h2>👋 เกี่ยวกับเรา</h2>
+                    <p>เว็บไซต์นี้สร้างขึ้น เผื่อช่วยอำนวยความสะดวก ให้กับเหล่าผู้เล่นที่ ชอบเกมในค่าย GI ของเรา</p>
+                    <p>หากมีคำแนะนำ ติชม หรือพบเจอปัญหา สามารถติดต่อเราได้ที่ [Discord : https://discord.gg/xuxhPVtR] ยินดีรับฟังทุกความคิดเห็นครับ!</p>
                 </div>
-                <div id="settings-message" class="message"></div>
             </div>
 
-        </div>
+        </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <footer class="footer-bottom">
+        <p>&copy; 2025 [Codes G.GIS]. All rights reserved. (ไม่ใช่เว็บไซต์ทางการของ Roblox)</p>
+        <p class="developer-info">พัฒนาโดย [Team GIS]</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
